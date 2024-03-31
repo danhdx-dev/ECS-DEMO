@@ -11,6 +11,7 @@ services:
       - "8080:80"
     depends_on:
       - laravel-db
+    command: /bin/bash -c "cp .env.example .env && php artisan key:generate && composer install && chmod 777 -R storage/ && php-fpm"
 
   laravel-db:
     image: mysql:latest
