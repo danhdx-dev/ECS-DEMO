@@ -26,7 +26,7 @@ COPY . .
 
 # Cài đặt các dependencies của Laravel bằng Composer
 RUN cp .env.example .env
-RUN php artisan key:generate
+# RUN php artisan key:generate
 RUN composer install --no-scripts --no-autoloader
 RUN chmod 777 -R storage/
 # CMD chạy các lệnh để khởi động dự án Laravel
